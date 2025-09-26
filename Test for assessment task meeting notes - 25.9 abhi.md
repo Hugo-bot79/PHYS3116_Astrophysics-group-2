@@ -1,4 +1,4 @@
-Test for assessment task meeting notes
+Assessment task meeting notes for the first meeting
 # Group meeting 1 
 # Attendee: Hugo Chen, XingKun Feng, Abhinaya Jeyandran
 
@@ -7,6 +7,25 @@ Agenda:
 
 Note:
 # Choice
-Person 1:
-Person 2:
-Person 3:
+XingKun Feng:
+Abhinaya Jeyandran:
+Hugo Chen:
+
+# What will be included in our assessment task.
+XingKun Feng:
+
+
+Abhinaya Jeyandran:
+
+
+Hugo Chen:
+
+
+# First three lines of codes
+XingKun Feng:
+
+
+Abhinaya Jeyandran:
+
+
+Hugo Chen:
