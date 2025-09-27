@@ -1,4 +1,6 @@
 Assessment task meeting notes for the first meeting
+# Date: tutorial on Thursday, 25/09/2025, additional meeting on Sunday, 28/09/2025.
+Note: We have to fixed the problems on VS code and Github, so we will have an additional meeting on Sunday to finish the markdown note.
 # Group meeting 1 
 # Attendee: Hugo Chen, XingKun Feng, Abhinaya Jeyandran
 
