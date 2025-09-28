@@ -17,7 +17,7 @@ Hugo Chen: Option 1
 XingKun Feng: globular cluster
 
 
-Abhinaya Jeyandran: angular momentum
+Abhinaya Jeyandran: enclose mass and angular momentum
 
 
 Hugo Chen: metallicity
@@ -25,7 +25,10 @@ Hugo Chen: metallicity
 
 # First three lines of codes
 XingKun Feng:
-
+# first step, define and install all package that we need.
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
 Abhinaya Jeyandran:
 # import csv file to python 
