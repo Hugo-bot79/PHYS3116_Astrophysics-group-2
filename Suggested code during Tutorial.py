@@ -7,16 +7,27 @@ import numpy as np
 import pandas as pd
 from csv import DictReader
 
-#Import csv file to python (testing whether it works)
+#Import csv fle to python (testing whether it works)
+#open file on read mode with UTF-8 encoding
 file_handle = open(r"Krause21.csv", "r", encoding="utf-8")
+# create a DictReader object to parse through the file
+# Dictreader reads each row into a dictionary
+# keys are taken from the first line - header row
+# values are the corresponding fields in each row
 csv_reader = DictReader(file_handle, delimiter = ",")
+#loop through each row and print the dictionary
 for row in csv_reader:
     print(row)
+#close the reader - needs to be done always
 file_handle.close()
-file_handle1 = open(r"HarrisPartIII.csv", "r", encoding="utf-8") #opens Harris Part III file 
-csv_reader1= DictReader(file_handle1, delimiter = "'") 
+# open and read HarrisPartIII csv file 
+file_handle1 = open(r"HarrisPartIII.csv", "r", encoding="utf-8") 
+# create a new Dictreader similar to above
+csv_reader1= DictReader(file_handle1, delimiter = ",") 
+#loop through and print rows from this file
 for row in csv_reader1: 
     print(row)
+#Close the second file
 file_handle1.close()
 
 #import csv file to pandas (real)
