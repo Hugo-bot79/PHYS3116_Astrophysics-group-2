@@ -22,7 +22,8 @@ file_handle1.close()
 #import csv file to pandas (real)
 Galaxydata_1 = pd.read_csv(r"Krause21.csv")
 print(Galaxydata_1)
-# 9/28 Sunday Meeting
+
+9/28 Sunday Meeting
 Option 1 Accreted Milky Way Globular Clusters
 Xingkun: Globular Clusters,Elliptical 
 Graph analysis based on clusters
