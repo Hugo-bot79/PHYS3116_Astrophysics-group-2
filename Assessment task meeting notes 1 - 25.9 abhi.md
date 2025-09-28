@@ -24,7 +24,10 @@ Hugo Chen: From the data for FeH to determine the metallicity of the star in the
 
 
 # First three lines of codes
-XingKun Feng:
+XingKun Feng: 
+Option 1 Accreted Milky Way Globular Clusters
+Xingkun: Globular Clusters,Elliptical 
+Graph analysis based on clusters
 # first step, define and install all package that we need.
 import matplotlib.pyplot as plt
 import numpy as np
