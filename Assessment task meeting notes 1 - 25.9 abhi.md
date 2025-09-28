@@ -24,17 +24,17 @@ Hugo Chen: metallicity.
 
 
 # First three lines of codes
-XingKun Feng: 
+# XingKun Feng: 
 Option 1 Accreted Milky Way Globular Clusters
 Xingkun: Globular Clusters,Elliptical 
 Graph analysis based on clusters
-# first step, define and install all package that we need.
+#first step, define and install all package that we need.
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-Abhinaya Jeyandran:
-# import csv file to python 
+# Abhinaya Jeyandran:
+#import csv file to python 
 #open file on read mode with UTF-8 encoding
 file_handle = open(r"Krause21.csv", "r", encoding="utf-8") 
 #create a DictReader object to parse through the file
@@ -57,8 +57,8 @@ for row in csv_reader1:
 #close the second file
 file_handle1.close()
 
-Hugo Chen:
-# import csv file to pandas (real)
+# Hugo Chen:
+#import csv file to pandas (real)
 <line of code> Galaxydata_1 = pd.read_csv("HarrisPartIII.csv")
 #import HarrisPartIII.csv file to pandas. This step ensure pandas can read and manipulate the data. 
 <line of code> Galaxydata_2 = pd.read_csv("Krause21.csv") 
