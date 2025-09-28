@@ -14,13 +14,13 @@ Abhinaya Jeyandran:Option 1
 Hugo Chen: Option 1
 
 # What will be included in our assessment task.
-XingKun Feng:
+XingKun Feng: globular cluster
 
 
-Abhinaya Jeyandran:
+Abhinaya Jeyandran: angular momentum
 
 
-Hugo Chen:
+Hugo Chen: metallicity
 
 
 # First three lines of codes
