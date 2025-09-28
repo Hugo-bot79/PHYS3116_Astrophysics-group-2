@@ -20,7 +20,7 @@ XingKun Feng: globular cluster
 Abhinaya Jeyandran: enclose mass and angular momentum
 
 
-Hugo Chen: From the data for FeH to determine the metallicity of the star in the galaxy and make comparison for different galaxies.
+Hugo Chen: From the data for FeH to determine the metallicity.
 
 
 # First three lines of codes
