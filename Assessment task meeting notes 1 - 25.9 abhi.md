@@ -9,9 +9,9 @@ Agenda:
 
 Note:
 # Choice
-XingKun Feng:
-Abhinaya Jeyandran:
-Hugo Chen:
+XingKun Feng:Option 1
+Abhinaya Jeyandran:Option 1
+Hugo Chen: Option 1
 
 # What will be included in our assessment task.
 XingKun Feng:
