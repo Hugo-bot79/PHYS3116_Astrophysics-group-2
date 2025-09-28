@@ -14,7 +14,7 @@ for row in csv_reader:
     print(row)
 file_handle.close()
 file_handle1 = open(r"HarrisPartIII.csv", "r", encoding="utf-8") #opens Harris Part III file 
-csv_reader1= DictReader(file_handle1, deliminter = "'") 
+csv_reader1= DictReader(file_handle1, delimiter = "'") 
 for row in csv_reader1: 
     print(row)
 file_handle1.close()
