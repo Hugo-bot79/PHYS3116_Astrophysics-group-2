@@ -48,17 +48,13 @@ for row in csv_reader1:
 
 Hugo Chen:
 # import csv file to pandas (real)
-<line of code>
-Galaxydata_1 = pd.read_csv("HarrisPartIII.csv") 
+<line of code> Galaxydata_1 = pd.read_csv("HarrisPartIII.csv")
 #import HarrisPartIII.csv file to pandas. This step ensure pandas can read and manipulate the data. 
-<line of code>
-Galaxydata_2 = pd.read_csv("Krause21.csv") 
+<line of code> Galaxydata_2 = pd.read_csv("Krause21.csv") 
 #import Krause21.csv file to pandas. This step ensure pandas can read and manipulate the data. 
-<line of code>
-print(Galaxydata_1) 
-#test whether pandas can read the data from HarrisPartIII.csv
-<line of code>
-print(Galaxydata_2) 
+<line of code> print(Galaxydata_1)
+ #test whether pandas can read the data from HarrisPartIII.csv
+<line of code> print(Galaxydata_2) 
 #test whether pandas can read the data from Krause21.csv
 
 Finish meeting
