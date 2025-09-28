@@ -1,0 +1,15 @@
+import numpy as np
+G = 6.67*10**-11 #m^3/kg/s^2
+M_Earth = 5.972*10**24 #kg
+R_Earth = 6.371*10**6 #m
+
+#Calculate the escape velocity of the Earth
+v_esc = np.sqrt(2*G*M_Earth/R_Earth)
+print("The escape velocity of the Earth is", v_esc, "m/s")
+
+#Calculate the escape velocity of the Sun
+M_Sun = 1.989*10**30 #kg
+R_Sun = 6.9634*10**8 #m
+v_esc_sun = np.sqrt(2*G*M_Sun/R_Sun)
+print("The escape velocity of the Sun is", v_esc_sun, "m/s")
+fff
