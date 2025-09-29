@@ -25,13 +25,11 @@ Hugo Chen: metallicity.
 
 # First three lines of codes
 # XingKun Feng: 
-Option 1 Accreted Milky Way Globular Clusters
-Xingkun: Globular Clusters,Elliptical 
-Graph analysis based on clusters
-#first step, define and install all package that we need.
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
+#import numpy as np (manipulation of arrays)
+#import pandas as pd (essential for merging process)
+#import matplotlib.pyplot as plt (create labelled figures of results)
+#from astropy.io import fits (has range of tools for astronomical computations, and also FITS contain multi-dimensional arrays)
+
 
 # Abhinaya Jeyandran:
 #import csv file to python 
