@@ -59,13 +59,13 @@ file_handle1.close()
 
 # Hugo Chen:
 #import csv file to pandas (real)
-<line of code> Galaxydata_1 = pd.read_csv("HarrisPartIII.csv")
 #import HarrisPartIII.csv file to pandas. This step ensure pandas can read and manipulate the data. 
-<line of code> Galaxydata_2 = pd.read_csv("Krause21.csv") 
+Galaxydata_1 = pd.read_csv("HarrisPartIII.csv")
 #import Krause21.csv file to pandas. This step ensure pandas can read and manipulate the data. 
-<line of code> print(Galaxydata_1)
- #test whether pandas can read the data from HarrisPartIII.csv
-<line of code> print(Galaxydata_2) 
+Galaxydata_2 = pd.read_csv("Krause21.csv") 
+#test whether pandas can read the data from HarrisPartIII.csv
+print(Galaxydata_1)
 #test whether pandas can read the data from Krause21.csv
+print(Galaxydata_2) 
 
 Finish meeting
