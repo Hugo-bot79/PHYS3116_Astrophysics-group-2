@@ -22,4 +22,9 @@ Consider what the above findings might mean for how the Milky Way formed and how
 
 # Abhinaya Jeyandran:
 
+#load the files and read 
+harris = pd.read_csv('data/harris_gc.csv')
+vandenberg = pd.read_csv('data/vandenberf2013.csv')
+
+
 # Hugo Chen:
