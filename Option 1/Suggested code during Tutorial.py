@@ -1,4 +1,4 @@
-# Three lines of code that are discussed in the tutorial on Thursday, 25/09/2025
+# Lines of code that are discussed in the tutorial on Thursday, 25/09/2025
 # The code has been discussed and recorded by Hugo Chen, XingKun Feng and Abhinaya Jeyandran
 
 #first step, define and install all package that we need.
