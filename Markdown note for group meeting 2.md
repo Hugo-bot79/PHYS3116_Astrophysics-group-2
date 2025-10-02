@@ -6,46 +6,46 @@ Assessment task meeting notes for the second meeting
 Agenda:
 - Github
 
-# Fix the error from the first meeting about the contents of the assessment task.
+#Fix the error from the first meeting about the contents of the assessment task.
 The purpose for this assessment task:  
 Use stellar population (metallicities [Fe/H] and ages) and dynamical information to identify potentially accreted globular clusters. Consider if there are some globular clusters that stand out in the age metallicity relation or that do not rotate with the bulk of other globular clusters. 
 Consider what the above findings might mean for how the Milky Way formed and how many of its globular clusters could be accreted and how many may have formed within the Milky Way. Consider what further tests could be performed to delineate various possible formation scenarios.
-# Our group has decided to use data vandenBerg_table2 insteand of HarrisPart III. This is because we want to analyse age-FeH relations and magnitude-Galactic radius to determine accreted globular cluster, and we are going to use mass of the star and HB type to conduct further analysis.  
+Our group has decided to use data vandenBerg_table2 insteand of HarrisPart III. This is because we want to analyse age-FeH relations and magnitude-Galactic radius to determine accreted globular cluster, and we are going to use mass of the star and HB type to conduct further analysis.  
 
 
 Hugo Chen
-# import csv file to pandas (real)
-# import Krause21.csv file to pandas. This step ensure pandas can read and manipulate the data. 
+#import csv file to pandas (real)
+#import Krause21.csv file to pandas. This step ensure pandas can read and manipulate the data. 
 Galaxydata_1 = pd.read_csv(r"Krause21.csv")
-# import VandenBerg.csv file to pandas. This step ensure pandas can read and manipulate the data.
+#import VandenBerg.csv file to pandas. This step ensure pandas can read and manipulate the data.
 Galaxydata_2 = pd.read_csv(r"vandenBerg_table2.csv")
-# test whether pandas can read the data from Krause21.csv
+#test whether pandas can read the data from Krause21.csv
 print(Galaxydata_1)
-# test whether pandas can read the data from VandenBerg.csv
+#test whether pandas can read the data from VandenBerg.csv
 print(Galaxydata_2)
 
-# Note:
-# Hugo Chen: 
-# Defined the parameter on the table and sent the link of the article to other group members, so that we can find out the mistake that we made and make a proper choice and determine what we will talk about in the project.
+#Note:
+Hugo Chen: 
+Defined the parameter on the table and sent the link of the article to other group members, so that we can find out the mistake that we made and make a proper choice and determine what we will talk about in the project.
 
 
 
 # First three lines of codes
-# Hugo Chen:
-# Select the required data from the Krause 21.csv.
+#Hugo Chen:
+#Select the required data from the Krause 21.csv.
 Galaxydata_1_selected = [['Object', 'Mstar']]
-# Select the required data from the VandeBerg.
+#Select the required data from the VandeBerg.
 Galaxydata_2_selected = [['object', 'FeH', 'Age', 'HBtype' 'R_G' 'M_V', 'v_e0']]
-# Merge the data that we need to a single datset.
+#Merge the data that we need to a single datset.
 merge_data = pd.merge(Galaxydata_1_selected, Galaxydata_2_selected, on = 'object')
-# Print the resultant table in the terminal
+#Print the resultant table in the terminal
 print(merge_data)
 
-# Abhinaya Jeyandran:
+#Abhinaya Jeyandran:
 
 #load the files and read 
 harris = pd.read_csv('data/harris_gc.csv')
 vandenberg = pd.read_csv('data/vandenberf2013.csv')
 
 
-# XingKun Feng
+#XingKun Feng
