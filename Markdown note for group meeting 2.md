@@ -43,4 +43,9 @@ print(merge_data)
 
 # Abhinaya Jeyandran:
 
-# XingKun Feng:
+#load the files and read 
+harris = pd.read_csv('data/harris_gc.csv')
+vandenberg = pd.read_csv('data/vandenberf2013.csv')
+
+
+# Hugo Chen:
