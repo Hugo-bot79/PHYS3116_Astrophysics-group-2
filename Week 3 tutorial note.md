@@ -30,5 +30,5 @@ If tem >= 33000:
     print('o')
 elif 10000 <= temp <= 33000:
     print('B')
-The coding is continue
+
 
