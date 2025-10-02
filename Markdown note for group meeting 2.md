@@ -48,4 +48,4 @@ harris = pd.read_csv('data/harris_gc.csv')
 vandenberg = pd.read_csv('data/vandenberf2013.csv')
 
 
-# Hugo Chen:
+# XingKun Feng
