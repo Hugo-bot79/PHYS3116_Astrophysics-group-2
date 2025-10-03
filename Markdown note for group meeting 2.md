@@ -13,16 +13,6 @@ Consider what the above findings might mean for how the Milky Way formed and how
 Our group has decided to use data vandenBerg_table2 insteand of HarrisPart III. This is because we want to analyse age-FeH relations and magnitude-Galactic radius to determine accreted globular cluster, and we are going to use mass of the star and HB type to conduct further analysis.  
 
 
-Hugo Chen
-#import csv file to pandas (real)
-#import Krause21.csv file to pandas. This step ensure pandas can read and manipulate the data. 
-Galaxydata_1 = pd.read_csv(r"Krause21.csv")
-#import VandenBerg.csv file to pandas. This step ensure pandas can read and manipulate the data.
-Galaxydata_2 = pd.read_csv(r"vandenBerg_table2.csv")
-#test whether pandas can read the data from Krause21.csv
-print(Galaxydata_1)
-#test whether pandas can read the data from VandenBerg.csv
-print(Galaxydata_2)
 
 #Note:
 Hugo Chen: 
@@ -34,10 +24,21 @@ And we have decided our tasks for this group meeting, I will choose the paramete
 
 # First three lines of codes
 #Hugo Chen:
+# fix the problem from the last meeting
+#import csv file to pandas (real)
+#import Krause21.csv file to pandas. This step ensure pandas can read and manipulate the data. 
+krau = pd.read_csv(r"Krause21.csv")
+#import VandenBerg.csv file to pandas. This step ensure pandas can read and manipulate the data.
+vdb = pd.read_csv(r"vandenBerg_table2.csv")
+#test whether pandas can read the data from Krause21.csv
+print(krau)
+#test whether pandas can read the data from VandenBerg.csv
+print(vdb)
+
 #Select the required data from the Krause 21.csv.
-Galaxydata_1_selected = [['Object', 'Mstar']]
+Galaxydata_1_selected = krau[['Object', 'Mstar']]
 #Select the required data from the VandeBerg.
-Galaxydata_2_selected = [['object', 'FeH', 'Age', 'HBtype' 'R_G' 'M_V', 'v_e0']]
+Galaxydata_2_selected = vdb[['object', 'FeH', 'Age', 'HBtype' 'R_G' 'M_V', 'v_e0']]
 #Merge the data that we need to a single datset.
 merge_data = pd.merge(Galaxydata_1_selected, Galaxydata_2_selected, on = 'object')
 #Print the resultant table in the terminal
