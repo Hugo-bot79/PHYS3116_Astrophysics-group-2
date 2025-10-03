@@ -14,12 +14,13 @@ Our group has decided to use data vandenBerg_table2 insteand of HarrisPart III. 
 
 
 
-#Note:
+# Note:
 Hugo Chen: 
 Defined the parameter on the table and sent the link of the article to other group members, so that we can find out the mistake that we made and make a proper choice and determine what we will talk about in the project.
 
 And we have decided our tasks for this group meeting, I will choose the parameter that we need, Abhinaya and XingKun will change the data to floating numbers.
 
+Self reflection: I still don't know a few parameters from these two files, next time I need to read the article thoroughly before the group meeting.
 
 
 # First three lines of codes
