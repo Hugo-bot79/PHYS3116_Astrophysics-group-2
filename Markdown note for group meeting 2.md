@@ -71,3 +71,34 @@ Galaxydata_2_selected['Age'] = to_float_series(Galaxydata_2_selected['Age'])
 Galaxydata_2_selected['HBtype'] = to_float_series(Galaxydata_2_selected['HBtype'])
 
 #XingKun Feng
+#Convert Krause dataset 'Mstar' column to float  
+#Unify as string which ensure all values have same type
+krau['Mstar'] = krau['Mstar'].astype(str)
+#Remove spaces
+krau['Mstar'] = krau['Mstar'].str.strip()
+#Convert into float finally
+krau['Mstar'] = krau['Mstar'].astype(float)
+
+#Convert vandenberg dataset 'Age' column to float  
+vdb['Age'] = vdb['Age'].astype(str)
+vdb['Age'] = vdb['Age'].str.strip()
+vdb['Age'] = vdb['Age'].astype(float)
+
+#Convert vandenberg dataset 'FeH' column to float  
+vdb['FeH'] = vdb['FeH'].astype(str)
+vdb['FeH'] = vdb['FeH'].str.strip()
+vdb['FeH'] = vdb['FeH'].astype(float)
+
+#Convert vandenberg dataset 'HBtype' column to float  
+vdb['HBtype'] = vdb['HBtype'].astype(str)
+vdb['HBtype'] = vdb['HBtype'].str.strip()
+vdb['HBtype'] = vdb['HBtype'].astype(float)
+
+#Verification process
+#Check Datatypes
+print(krau[['Mstar']].dtypes)
+print(vdb[['Age','FeH','HBtype']].dtypes)
+
+#Confirm values
+print(krau[['Mstar']].head())
+print(vdb[['Age','FeH','HBtype']].head())
