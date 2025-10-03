@@ -71,34 +71,29 @@ Galaxydata_2_selected['Age'] = to_float_series(Galaxydata_2_selected['Age'])
 Galaxydata_2_selected['HBtype'] = to_float_series(Galaxydata_2_selected['HBtype'])
 
 #XingKun Feng
-#Convert Krause dataset 'Mstar' column to float  
+#Convert R_G, M_V and v_e0 columns in merge data to float
+
+#Convert R_G
 #Unify as string which ensure all values have same type
-krau['Mstar'] = krau['Mstar'].astype(str)
+merge_data['R_G'] = merge_data['R_G'].astype(str)
 #Remove spaces
-krau['Mstar'] = krau['Mstar'].str.strip()
+merge_data['R_G'] = merge_data['R_G'].str.strip()
 #Convert into float finally
-krau['Mstar'] = krau['Mstar'].astype(float)
+merge_data['R_G'] = merge_data['R_G'].astype(float)
 
-#Convert vandenberg dataset 'Age' column to float  
-vdb['Age'] = vdb['Age'].astype(str)
-vdb['Age'] = vdb['Age'].str.strip()
-vdb['Age'] = vdb['Age'].astype(float)
+#Convert M_V
+merge_data['M_V'] = merge_data['M_V'].astype(str)
+merge_data['M_V'] = merge_data['M_V'].str.strip()
+merge_data['M_V'] = merge_data['M_V'].astype(float)
 
-#Convert vandenberg dataset 'FeH' column to float  
-vdb['FeH'] = vdb['FeH'].astype(str)
-vdb['FeH'] = vdb['FeH'].str.strip()
-vdb['FeH'] = vdb['FeH'].astype(float)
-
-#Convert vandenberg dataset 'HBtype' column to float  
-vdb['HBtype'] = vdb['HBtype'].astype(str)
-vdb['HBtype'] = vdb['HBtype'].str.strip()
-vdb['HBtype'] = vdb['HBtype'].astype(float)
+#Convert v_e0
+merge_data['v_e0'] = merge_data['v_e0'].astype(str)
+merge_data['v_e0'] = merge_data['v_e0'].str.strip()
+merge_data['v_e0'] = merge_data['v_e0'].astype(float)
 
 #Verification process
 #Check Datatypes
-print(krau[['Mstar']].dtypes)
-print(vdb[['Age','FeH','HBtype']].dtypes)
+print(merge_data[['R_G','M-V','v_e0']].dtypes)
 
 #Confirm values
-print(krau[['Mstar']].head())
-print(vdb[['Age','FeH','HBtype']].head())
+print(merge_data[['R_G','M-V','v_e0']].head())
