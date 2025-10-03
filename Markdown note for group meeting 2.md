@@ -43,9 +43,29 @@ print(merge_data)
 
 #Abhinaya Jeyandran:
 
-#load the files and read 
-harris = pd.read_csv('data/harris_gc.csv')
-vandenberg = pd.read_csv('data/vandenberf2013.csv')
+#import pandas for table loading, selction and merging
+import pandas as pd
+#import regex to parse numbers in needed
+import re
 
+#load the files that we are selecting from
+krau = pd.read_csv('Kruase21.csv') 
+vdb = pd.read_csv('vandenBerg_table,csv')
+
+#Strip coloumn names from that spaces to not have any whitepspaces
+krau.columns = [c.strp() for c in krau.columns]
+vdb.columns = [c.strip() for c in vdb.columns]
+
+#from Hugos code, we can now float the numeric columns
+#in Krause: Mstar is numeric; keep 'object' as a string identifier
+Galaxy_1_selected['Mstar'] = to_float_series(Galaxydata_1_selected['Mstar'])  #Convert Mstar to float
+
+#In vandenberg, all numeric fields can be converted to float
+#[Fe/H] metallicity → float
+Galaxydata_2_selected['FeH'] = to_float_series(Galaxydata_2_selected['FeH']) 
+#Age (Gyr) → float
+Galaxydata_2_selected['Age'] = to_float_series(Galaxydata_2_selected['Age'])   
+#HB type (B-R)/(B+V+R) - float
+Galaxydata_2_selected['HBtype'] = to_float_series(Galaxydata_2_selected['HBtype'])
 
 #XingKun Feng
