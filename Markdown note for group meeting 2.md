@@ -37,9 +37,9 @@ print(krau)
 print(vdb)
 
 #Select the required data from the Krause 21.csv.
-Galaxydata_1_selected = krau[['#NGC', 'Mstar']]
+Galaxydata_1_selected = krau[['object', 'Mstar']]
 #Select the required data from the VandeBerg.
-Galaxydata_2_selected = vdb[['object', 'FeH', 'Age', 'HBtype' 'R_G' 'M_V', 'v_e0']]
+Galaxydata_2_selected = vdb[[ 'FeH', 'Age', 'HBtype' 'R_G' 'M_V', 'v_e0']]
 #Merge the data that we need to a single datset.
 merge_data = pd.merge(Galaxydata_1_selected, Galaxydata_2_selected, on = 'object')
 #Print the resultant table in the terminal
