@@ -22,3 +22,4 @@ What have we said in the meeting?
 
 
 # XingKun Feng:
+-put previous code(week3 md) in python/vs code and assess. need to finish this and correct any possible errors for floating numbers before proceed to plot age & metaliciity graph in week 4 md.
