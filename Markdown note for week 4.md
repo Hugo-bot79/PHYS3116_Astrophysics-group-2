@@ -8,8 +8,7 @@ Agenda:
 
 What have we said in the meeting?
 # Hugo Chen:
-"I need to fix some codes from the last week. For example, we need to change the code as parameter 'object' is not a common parameter in both Krause 21 and VandeBerg_table 2"
-"I need to include 'rh' (half-light radius) and '
+
 
 
 # Abhinaya Jeyandran:
