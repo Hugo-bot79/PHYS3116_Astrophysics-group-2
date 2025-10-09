@@ -18,7 +18,7 @@ What have we said in the meeting?
 - We have decided which data sets to plot and will confer again at the end of the week to regroup.
 - We need to decide next couple of plots and have decided to aim to plot by next week
 - We have decided to proofread the existing code ASAP to make sure that we are flush out any errors that are existing.
-
+- we decided to plot age and metallicity
 
 
 # XingKun Feng:
