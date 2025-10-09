@@ -9,7 +9,9 @@ Agenda:
 
 What have we said in the meeting?
 # Hugo Chen:
-
+"We have to fix some errors from the last lesson. For example, we need to include "rh" from the Krause 21 and vandeberg."
+"I need to rename object in the krause 21 before merging the data."
+"we decided to plot the age and metallicity graph this week to get rid of some obvious candidates this week."
 
 
 # Abhinaya Jeyandran:
