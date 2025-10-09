@@ -9,13 +9,14 @@ Agenda:
 
 What have we said in the meeting?
 # Hugo Chen:
-- We need to decide next couple of plots and have decided to aim to plot by next week
-- 
+
 
 
 # Abhinaya Jeyandran:
 - We have decided which data sets to plot and will confer again at the end of the week to regroup.
+- We need to decide next couple of plots and have decided to aim to plot by next week
+- We have decided to proofread the existing code ASAP to make sure that we are flush out any errors that are existing.
+
 
 
 # XingKun Feng:
-- We have decided to proofread the existing code ASAP to make sure that we are flush out any errors that are existing.
