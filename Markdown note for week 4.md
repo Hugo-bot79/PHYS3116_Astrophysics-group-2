@@ -69,11 +69,23 @@ Galaxydata_2_selected = vdb[['Object', 'HBtype', 'R_G', 'log_sigma_0']]
 
 # abhi
 - i have continued with the code from Hugo to add titles and labels
-
 #title for the plot from above
 axis1.set_title(
     "Age vs [Fe/H] for Milky Way Globular Clusters (Krause21 subset)",
     fontsize=14, pad=12
 )
-
+#this is for the labels for each of the plots, and the labels are slightly offset to make sure that it does not overlap
+for row in Galaxydata_1_selected.iterrows():
+    axis1.annotate(
+        row["Object"],
+        xy=(row["FeH"], row["Age"]),
+        xytext=(3, 3),
+        textcoords="offset points",
+        fontsize=8,
+        alpha=0.9
+    )
 - I also made a few errors in the code from last week that needed to be re-written
+#this code was fixed from last week to define the function to convert it to a floating 
+def to_float_series(s: pd.Series) -> pd.Series:
+    out = pd.to_numeric(s, errors='coerce')
+    
