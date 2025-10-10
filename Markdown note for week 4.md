@@ -28,6 +28,17 @@ What have we said in the meeting?
 # Hugo Chen
 # Based on our investigation, there are more clusters of stars in Krause 21 compared to the number of clusters of stars in vandeBerg_table2.
 # Therefore, we will use the age and FeH in the this dataset to fist define the obvious candidates for accreted cluster (The codeing graph will be written by Hugo, Abhi and XingKun).
+# Create the figure and axis
+fig, axis1 = plt.subplots(figsize=(10, 5))
+
+# Plot Age on the left y-axis
+# label the age in y axis and FeH in the x axis.
+plt.xlabel('FeH')
+plt.ylabel('Age')
+
+# Plot the scatter plot and set up the colour as blue
+plt.scatter(Galaxydata_1_selected['FeH'], Galaxydata_1_selected['Age'], color = "blue", marker='o')
+
 
 
 # Fix mistakes from the last meeting note about meeting data.
