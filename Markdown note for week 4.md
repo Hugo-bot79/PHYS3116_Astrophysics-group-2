@@ -26,7 +26,7 @@ What have we said in the meeting?
 
 # Three lines of codes and documentation
 # Hugo Chen
-# Based on our investigation, there are more clusters of stars in Krause 21 compared to the number of clusters of stars in vandeBerg_table2.
+#Based on our investigation, there are more clusters of stars in Krause 21 compared to the number of clusters of stars in vandeBerg_table2.
 # Therefore, we will use the age and FeH in the this dataset to fist define the obvious candidates for accreted cluster (The codeing graph will be written by Hugo, Abhi and XingKun).
 # Create the figure and axis
 fig, axis1 = plt.subplots(figsize=(10, 5))
@@ -66,3 +66,14 @@ print(vdb_2)
 # select the data that we need from both csv file. Note that rh and log_sigma_0 will be chosen to identify the rotational kinematic.
 Galaxydata_1_selected = krau_1[['Object', 'Mstar', 'rh', 'FeH', 'Age']]
 Galaxydata_2_selected = vdb[['Object', 'HBtype', 'R_G', 'log_sigma_0']]
+
+# abhi
+- i have continued with the code from Hugo to add titles and labels
+
+#title for the plot from above
+axis1.set_title(
+    "Age vs [Fe/H] for Milky Way Globular Clusters (Krause21 subset)",
+    fontsize=14, pad=12
+)
+
+- I also made a few errors in the code from last week that needed to be re-written
