@@ -91,3 +91,21 @@ for row in Galaxydata_1_selected.iterrows():
 def to_float_series(s: pd.Series) -> pd.Series:
     out = pd.to_numeric(s, errors='coerce')
     
+# Xingkun Feng
+# Finalisation: flag obvious 'candidates', highlight them, save outputs
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Threshold use 
+feh_cutoff = -1.5
+
+# CreateMerge table
+merge_data = pd.merge(Galaxydata_1_selected, Galaxydata_2_selected, on='Object', how='inner').copy()
+
+# Select obvious candidates
+age_threshold = merge_data['Age'].quantile(0.75)
+# Keep only rows that are both very metal-poor and very old
+candis = merge_data[(merge_data['FeH'] <= feh_cutoff) & (merge_data['Age'] >=age_threshold)].copy()
+
