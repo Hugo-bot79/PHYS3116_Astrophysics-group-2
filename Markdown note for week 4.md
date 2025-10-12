@@ -47,11 +47,13 @@ plt.scatter(Galaxydata_1_selected['FeH'], Galaxydata_1_selected['Age'], color = 
 # Remove the rows from Krause21 and vandeBerg_table2 so that they have the same rows. 
 # From the Krause21
 removed_objects = ['Ruprecht106', 'Terzan7', 'Palomar12', 'NGC1904', 'NGC2298', 'NGC5897', 'NGC6093', 'NGC6139', 'NGC6388', 'NGC6441', ]  # example objects to remove
+# removed rows where 'Object' is in the krau list
 krau_1 = krau_1[~krau_1['Object'].isin(removed_objects)].copy()
 print(krau_1)
 
 # From the vandeBerg_table2.
 removed_ngc = ['4147', 'XXXX']          # example NGC I want to remove
+# removed rows where 'Object' is in the vdb list
 vdb_2 = vdb_2[~vdb_2['#NGC'].isin(removed_ngc)].copy()
 print(vdb_2)
 
@@ -60,7 +62,7 @@ vdb_2.rename(columns={'#NGC': 'Object'}, inplace=True)
 print(vdb_2)
 
 # Add 'NGC' to the front of each entry in the 'Object' column
-vdb_2['Object'] = 'NGC' + vdb_2['Object'].astype(str).str.strip()
+vdb_2['Object'] = ('NGC' + vdb_2['Object'].astype(str)).str.strip()
 print(vdb_2)
 
 # select the data that we need from both csv file. Note that rh and log_sigma_0 will be chosen to identify the rotational kinematic.
