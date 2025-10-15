@@ -44,30 +44,32 @@ plt.scatter(Galaxydata_1_selected['FeH'], Galaxydata_1_selected['Age'], color = 
 # Fix mistakes from the last meeting note about meeting data.
 # Because there are more clusters in Krause21 compared to vandeBerg_table2. And almost all cluters in vandeBerg_table2 is covered in Krause21. Therefore, I need to remove some rows before merging data, and we have to first identify the obvious candidate from the Krause21.
 
-# Remove the rows from Krause21 and vandeBerg_table2 so that they have the same rows. 
-# From the Krause21
-removed_objects = ['Ruprecht106', 'Terzan7', 'Palomar12', 'NGC1904', 'NGC2298', 'NGC5897', 'NGC6093', 'NGC6139', 'NGC6388', 'NGC6441', ]  # example objects to remove
-# removed rows where 'Object' is in the krau list
-krau_1 = krau_1[~krau_1['Object'].isin(removed_objects)].copy()
-print(krau_1)
+# I have gone through the test, this codes didn't work well
+# I would rather try this way:
+# Select all the NGC cluster on common for the datasets
+# Normalize names of the clusters for merging
+# define the function to contain only clusters on common before merging data
+def extract_ngc_number(id):
+# Ensures that only NGC on common are processed.
+    if pd.isna(id):
+        return None
+ # Filters only entries that are labeled with "NGC"
+    if "NGC" in id:
+        return id.replace("NGC", "").strip()
+    return None
 
-# From the vandeBerg_table2.
-removed_ngc = ['4147', 'XXXX']          # example NGC I want to remove
-# removed rows where 'Object' is in the vdb list
-vdb_2 = vdb_2[~vdb_2['#NGC'].isin(removed_ngc)].copy()
-print(vdb_2)
+# Before we merge the data, we need to change  object and #NGC columns of data from Krause21 and vandenBerg_table2 to a common format
+krau["NGC"] = krau["Object"].str.extract(r'(\d+)', expand=False) # The extract ensure that only number exist
+vdb["NGC"] = vdb["#NGC"].astype(str)
 
-# rename '#NGC' to 'object' for vendenberg table so that these two set of data can be merged
-vdb_2.rename(columns={'#NGC': 'Object'}, inplace=True)
-print(vdb_2)
+# select only relevant columns for diagnostics
+krau_selected = krau[["NGC", "rh", "FeH", "Age"]]
+vdb_selected = vdb[["NGC", "HBtype", "R_G", "v_e0", "M_V"]]
 
-# Add 'NGC' to the front of each entry in the 'Object' column
-vdb_2['Object'] = ('NGC' + vdb_2['Object'].astype(str)).str.strip()
-print(vdb_2)
+# Note that we only investigate the common clusters (NGC...) in all datasets
+merged_data = pd.merge(krau_selected, vdb_selected, on="NGC")
+print(merged_data)
 
-# select the data that we need from both csv file. Note that rh and log_sigma_0 will be chosen to identify the rotational kinematic.
-Galaxydata_1_selected = krau_1[['Object', 'Mstar', 'rh', 'FeH', 'Age']]
-Galaxydata_2_selected = vdb[['Object', 'HBtype', 'R_G', 'log_sigma_0']]
 
 # abhi
 - i have continued with the code from Hugo to add titles and labels
