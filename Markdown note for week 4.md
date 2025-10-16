@@ -31,7 +31,7 @@ What have we said in the meeting?
 # Create the figure and axis
 fig, axis1 = plt.subplots(figsize=(10, 5))
 
-# Plot Age on the left y-axis
+
 # label the age in y axis and FeH in the x axis.
 plt.xlabel('FeH')
 plt.ylabel('Age')

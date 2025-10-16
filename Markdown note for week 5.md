@@ -21,3 +21,22 @@ We will record together in person and will try Chatswood Highschool or UNi
 "We can add kinematic analysis as an option for the final video."
 "Choose a day on week 6 to record the final video."
 "Extra meeting on Sunday."
+
+
+
+Three lines of codes:
+# Will first do the codes for M_V versus R_G above 
+# We need to filter the stars with high HBType, as high HBType means strongly blue horizontal branch. These are the older and metal-poor clusters. and it's a strong indication of accreted galaxy (The reference will provided in the final project).
+# We will keep all rows with HBtype > 8
+HB_merged_data = merged_data[merged_data['HBtype'] > 8]
+print(HB_merged_data)
+
+# Create the figure and axis
+fig, axis1 = plt.subplots(figsize=(10, 5))
+
+# label the M_V in y axis and R_G in the x axis.
+plt.xlabel('M_V(mag)')
+plt.ylabel('R_G(kpc)')
+
+# Plot the scatter plot and set up the colour as blue
+plt.scatter(HB_merged_data['M_V(mag)'], HB_merged_data['R_G(kpc)'], color = "green", marker='o')
