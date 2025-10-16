@@ -13,3 +13,4 @@ We will plot:
 HB type vs FE 
 
 Abhi - will mess around with more the code and have extra meetings on the weekends
+We will record together in person and will try Chatswood Highschool or UNi
