@@ -8,3 +8,8 @@ Agenda:
 - Code will be contributed before Friday by each member.
 
 What have we said in the meeting?
+
+We will plot: 
+HB type vs FE 
+
+Abhi - will mess around with more the code and have extra meetings on the weekends
