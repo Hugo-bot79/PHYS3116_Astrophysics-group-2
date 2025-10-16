@@ -111,3 +111,17 @@ age_threshold = merge_data['Age'].quantile(0.75)
 # Keep only rows that are both very metal-poor and very old
 candis = merge_data[(merge_data['FeH'] <= feh_cutoff) & (merge_data['Age'] >=age_threshold)].copy()
 
+# Highlight candidates
+ax = axis1
+ax.scatter(..., s=80, marker='*', colors='blue', edgecolours='k', linewidths=0.5,label='Candidates')
+ax.legend(loc='best')
+
+# Save outputs
+cols = [c for c in ['Object', 'FeH', 'Age', 'rh', 'R_G'] if c in candis.columns]
+candis[cols].to_csv('week4_candidates.csv', index=False)
+ax.get_figured().savefig('week4_age_feh_candidates.png', dpi=200)
+
+# Summary
+print(f"Age threshold (Q3): {age_threshold:.2f} Gyr | FeH cutoff: {feh_cutoff}")
+print(f"Candidates flagged: {len(candis)}")
+print(candis[cols].to_string(index=Flase))
