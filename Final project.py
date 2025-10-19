@@ -24,3 +24,11 @@ for row in csv_reader:
     print(row)  
 
 file_handle.close()
+
+# Third step: import csv file to pandas
+krau = pd.read_csv(r"Krause21.csv")
+vdb = pd.read_csv(r"vandenBerg_table2.csv")
+print(krau)
+print(vdb)
+
+
