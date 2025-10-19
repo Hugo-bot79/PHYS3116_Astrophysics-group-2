@@ -28,22 +28,24 @@ file_handle.close()
 # Third step: import csv file to pandas
 krau = pd.read_csv(r"Krause21.csv")
 vdb = pd.read_csv(r"vandenBerg_table2.csv")
+# Print out the data in the terminal to check if the data is imported correctly
 print(krau)
 print(vdb)
 
 # Fourth step: Data cleaning and preparation
-# Normalize IDs for merging
+# Normalize IDs for merging, extract the NGC number 
 def ngc_number(id):
-# Ensures that only NGC on common are processed.
+# checks whether the id is missing value
     if pd.isna(id):
         return None
-# Filters only those entries that are labeled with "NGC"
+# Check whether 'NGC' is present.
     if "NGC" in id:
         return id.replace("NGC", "").strip()
-    return None
+    return None # If no NGC, then return empty set
+
 
 # Before we merge the data, we need to change object and #NGC columns of data from Krause21 and vandenBerg_table2 to a common format.
-krau["NGC"] = krau["Object"].str.extract(r'(\d+)', expand=False)
+krau["NGC"] = krau["Object"].str.extract(r'(\d+)', expand=False) # the r'(\d+)' can be used to extract the number part, while expand=False returns a Series.
 vdb["NGC"] = vdb["#NGC"].astype(str)
 
 # select only relevant columns for diagnostics
