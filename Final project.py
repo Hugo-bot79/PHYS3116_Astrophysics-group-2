@@ -31,4 +31,27 @@ vdb = pd.read_csv(r"vandenBerg_table2.csv")
 print(krau)
 print(vdb)
 
+# Fourth step: Data cleaning and preparation
+# Normalize IDs for merging
+def ngc_number(id):
+# Ensures that only NGC on common are processed.
+    if pd.isna(id):
+        return None
+# Filters only those entries that are labeled with "NGC"
+    if "NGC" in id:
+        return id.replace("NGC", "").strip()
+    return None
+
+# Before we merge the data, we need to change object and #NGC columns of data from Krause21 and vandenBerg_table2 to a common format.
+krau["NGC"] = krau["Object"].str.extract(r'(\d+)', expand=False)
+vdb["NGC"] = vdb["#NGC"].astype(str)
+
+# select only relevant columns for diagnostics
+krau_selected = krau[["NGC", "Age", "FeH"]]
+vdb_selected = vdb[["NGC", 'HBtype', 'R_G', 'M_V']]
+
+# Fifth step: Merge datasets on the normalized NGC column
+# Note that we only investigate the common clusters (NGC...) in all datasets
+merged_data = pd.merge(krau_selected, vdb_selected, on="NGC")
+print(merged_data)
 
