@@ -6,5 +6,21 @@ import numpy as np
 #use pandas for spreadsheet data
 import pandas as pd
 
-improt matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from astropy.io import fits
+
+# Second step: import the dataset to the python
+from csv import DictReader
+file_handle = open(r"Krause21.csv", "r", encoding="utf-8")
+csv_reader = DictReader(file_handle, delimiter=",")
+for row in csv_reader:
+    print(row) 
+
+file_handle.close()
+
+file_handle1 = open(r"vandenBerg_table2.csv", "r", encoding="utf-8")
+csv_reader = DictReader(file_handle1, delimiter=",")
+for row in csv_reader:
+    print(row)  
+
+file_handle.close()
