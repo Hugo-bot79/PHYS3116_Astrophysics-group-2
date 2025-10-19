@@ -55,3 +55,12 @@ vdb_selected = vdb[["NGC", 'HBtype', 'R_G', 'M_V']]
 merged_data = pd.merge(krau_selected, vdb_selected, on="NGC")
 print(merged_data)
 
+#Sixth step: Convert each column to floating numbers
+# Helper function to convert a pandas Series to float, handling errors
+def to_float_series(series):
+    return pd.to_numeric(series, errors='coerce')
+
+# Convert relevant columns to float
+merged_data['Age'] = to_float_series(merged_data['Age'])
+merged_data['FeH'] = to_float_series(merged_data['FeH'])
+
