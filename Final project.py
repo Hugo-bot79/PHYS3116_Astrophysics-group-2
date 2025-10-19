@@ -91,9 +91,22 @@ for row in merged_data.iterrows():
 plt.grid(True)
 plt.show()
 
+# KK: Apply the filter
 
 
-# Fix: use HB_merged_data and correct x,y coordinates for this plot
+
+# Eightth step, plot M_V vs R_G in the filter of HBtype to identify the possible accreted clusters from the merged data
+#If we are not going to apply the HBtype filter
+fig, axis1 = plt.subplots(figsize=(10, 5))
+# label the M_V in y axis and R_G in the x axis.
+# label the M_V in y axis and R_G in the x axis.
+plt.xlabel('R_G(kpc)')
+plt.ylabel('M_V(mag)')
+
+# Plot the scatter plot and set up the colour as blue
+plt.scatter(merged_data['R_G'], merged_data['M_V'], color="green", marker='o')
+plt.title("M_V vs R_G for Milky Way Globular Clusters with HBtype > 0.85")
+
 for _, row in merged_data.iterrows():
     plt.annotate(
         str(row['NGC']),
@@ -106,5 +119,37 @@ for _, row in merged_data.iterrows():
 
 plt.grid(True)
 plt.show()
+
+# If we apply the filter
+# We will keep all rows with HBtype > 0.85
+HB_merged_data = merged_data[merged_data['HBtype'] > 0.85].copy()
+print(HB_merged_data)
+
+# Create the figure and axis
+fig, axis1 = plt.subplots(figsize=(10, 5))
+
+# label the M_V in y axis and R_G in the x axis.
+plt.xlabel('R_G(kpc)')
+plt.ylabel('M_V(mag)')
+
+# Plot the scatter plot and set up the colour as blue
+plt.scatter(HB_merged_data['R_G'], HB_merged_data['M_V'], color="green", marker='o')
+plt.title("M_V vs R_G for Milky Way Globular Clusters with HBtype > 0.85")
+
+# From Abhi, I label the clusters on my graph
+for _, row in HB_merged_data.iterrows():
+    plt.annotate(
+        str(row['NGC']),
+        xy=(row['R_G'], row['M_V']),  
+        xytext=(3, 3),
+        textcoords="offset points",
+        fontsize=8,
+        alpha=0.9
+    )
+
+plt.grid(True)
+plt.show()
+
+
 
 
