@@ -63,4 +63,9 @@ def to_float_series(series):
 # Convert relevant columns to float
 merged_data['Age'] = to_float_series(merged_data['Age'])
 merged_data['FeH'] = to_float_series(merged_data['FeH'])
+merged_data['HBtype'] = to_float_series(merged_data['HBtype'])
+merged_data['R_G'] = to_float_series(merged_data['R_G'])
+merged_data['M_V'] = to_float_series(merged_data['M_V'])
+print(merged_data)
+
 
