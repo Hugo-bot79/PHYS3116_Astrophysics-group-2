@@ -70,6 +70,14 @@ print(merged_data)
 
 plt.title("Age vs [Fe/H] for Milky Way Globular Clusters")
 
+# Seventh step, plot the graph of age against metallicity to identify the possible accreted clusters from the merged data
+plt.figure(figsize=(10, 6))
+
+# Put the age in y axis and FeH in the x axis
+plt.xlabel('FeH')
+plt.ylabel('Age (Gyr)')
+plt.scatter( merged_data['FeH'], merged_data['Age'], color = "blue", marker='o')
+
 for row in merged_data.iterrows():
     plt.annotate(
         str(row[1]['NGC']),
@@ -82,5 +90,6 @@ for row in merged_data.iterrows():
 
 plt.grid(True)
 plt.show()
+
 
 
