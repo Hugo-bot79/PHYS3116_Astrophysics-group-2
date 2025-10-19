@@ -12,6 +12,12 @@ Use stellar population (metallicities [Fe/H] and ages) and dynamical information
 Consider what the above findings might mean for how the Milky Way formed and how many of its globular clusters could be accreted and how many may have formed within the Milky Way. Consider what further tests could be performed to delineate various possible formation scenarios.
 Our group has decided to use data vandenBerg_table2 insteand of HarrisPart III. This is because we want to analyse age-FeH relations and magnitude-Galactic radius to determine accreted globular cluster, and we are going to use mass of the star and HB type to conduct further analysis.  
 
+Note:
+# Hugo CHEN
+"We need to fix the problem from the previous files and decide what parameter that we need to use for the final project."
+"Find out what the parameters mean for Krause21 table and Vandenberg table."
+
+
 
 # First three lines of codes
 #Hugo Chen:
