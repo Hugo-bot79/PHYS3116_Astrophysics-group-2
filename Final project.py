@@ -131,7 +131,7 @@ plt.ylabel('M_V(mag)')
 
 # Plot the scatter plot and set up the colour as blue
 plt.scatter(merged_data['R_G'], merged_data['M_V'], color="green", marker='o')
-plt.title("M_V vs R_G for Milky Way Globular Clusters with HBtype > 0.85")
+plt.title("M_V vs R_G for Milky Way Globular Clusters")
 
 for _, row in merged_data.iterrows():
     plt.annotate(
