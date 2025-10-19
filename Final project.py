@@ -93,6 +93,32 @@ plt.show()
 
 # KK: Apply the filter
 
+# We can also apply a filter for age and FeH to identify the possible accreted clusters.
+# Threshold use 
+feh_cutoff = -1.5
+
+
+# Select obvious candidates
+age_threshold = merged_data['Age'].quantile(0.75)
+# Keep only rows that are both very metal-poor and very old
+candis = merged_data[(merged_data['FeH'] <= feh_cutoff) & (merged_data['Age'] >= age_threshold)].copy()
+
+# Highlight candidates
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.scatter(candis['FeH'], candis['Age'], s=80, marker='*', color='blue', edgecolors='k', linewidths=0.5, label='Candidates')
+ax.legend(loc='best')
+
+# Save outputs
+cols = [c for c in ['NGC', 'FeH', 'Age', 'R_G', 'M_V'] if c in candis.columns]
+
+candis[cols].to_csv('week4_candidates.csv', index=False)
+fig.savefig('week4_age_feh_candidates.png', dpi=200)
+
+# Summary
+print(f"Age threshold (Q3): {age_threshold:.2f} Gyr | FeH cutoff: {feh_cutoff}")
+print(f"Candidates flagged: {len(candis)}")
+print(candis[cols].to_string(index=False))
+
 
 
 # Eightth step, plot M_V vs R_G in the filter of HBtype to identify the possible accreted clusters from the merged data
@@ -149,6 +175,7 @@ for _, row in HB_merged_data.iterrows():
 
 plt.grid(True)
 plt.show()
+
 
 
 
