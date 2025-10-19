@@ -68,4 +68,19 @@ merged_data['R_G'] = to_float_series(merged_data['R_G'])
 merged_data['M_V'] = to_float_series(merged_data['M_V'])
 print(merged_data)
 
+plt.title("Age vs [Fe/H] for Milky Way Globular Clusters")
+
+for row in merged_data.iterrows():
+    plt.annotate(
+        str(row[1]['NGC']),
+        xy=(row[1]['FeH'], row[1]['Age']),
+        xytext=(3, 3),
+        textcoords="offset points",
+        fontsize=8,
+        alpha=0.9
+    )
+
+plt.grid(True)
+plt.show()
+
 
