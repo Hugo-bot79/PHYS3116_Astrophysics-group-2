@@ -93,3 +93,18 @@ plt.show()
 
 
 
+# Fix: use HB_merged_data and correct x,y coordinates for this plot
+for _, row in merged_data.iterrows():
+    plt.annotate(
+        str(row['NGC']),
+        xy=(row['R_G'], row['M_V']),  
+        xytext=(3, 3),
+        textcoords="offset points",
+        fontsize=8,
+        alpha=0.9
+    )
+
+plt.grid(True)
+plt.show()
+
+
