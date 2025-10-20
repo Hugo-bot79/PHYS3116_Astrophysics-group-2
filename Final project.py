@@ -26,8 +26,8 @@ for row in csv_reader:
 file_handle.close()
 
 # Third step: import csv file to pandas
-krau = pd.read_csv(r"Option 1\Krause21.csv")
-vdb = pd.read_csv(r"Option 1\vandenBerg_table2.csv")
+krau = pd.read_csv(r"Krause21.csv")
+vdb = pd.read_csv(r"vandenBerg_table2.csv")
 # Print out the data in the terminal to check if the data is imported correctly
 print(krau)
 print(vdb)
