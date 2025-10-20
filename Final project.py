@@ -11,14 +11,14 @@ from astropy.io import fits
 
 # Second step: import the dataset to the python
 from csv import DictReader
-file_handle = open(r"Krause21.csv", "r", encoding="utf-8")
+file_handle = open(r"Option 1\Krause21.csv", "r", encoding="utf-8")
 csv_reader = DictReader(file_handle, delimiter=",")
 for row in csv_reader:
     print(row) 
 
 file_handle.close()
 
-file_handle1 = open(r"vandenBerg_table2.csv", "r", encoding="utf-8")
+file_handle1 = open(r"Option 1\vandenBerg_table2.csv", "r", encoding="utf-8")
 csv_reader = DictReader(file_handle1, delimiter=",")
 for row in csv_reader:
     print(row)  
@@ -26,8 +26,8 @@ for row in csv_reader:
 file_handle.close()
 
 # Third step: import csv file to pandas
-krau = pd.read_csv(r"Krause21.csv")
-vdb = pd.read_csv(r"vandenBerg_table2.csv")
+krau = pd.read_csv(r"Option 1\Krause21.csv")
+vdb = pd.read_csv(r"Option 1\vandenBerg_table2.csv")
 # Print out the data in the terminal to check if the data is imported correctly
 print(krau)
 print(vdb)
@@ -125,7 +125,7 @@ print(candis[cols].to_string(index=False))
 
 # Eightth step, plot M_V vs R_G in the filter of HBtype to identify the possible accreted clusters from the merged data
 #If we are not going to apply the HBtype filter
-fig, axis1 = plt.subplots(figsize=(10, 5))
+plt.figure(figsize=(10, 6))
 # label the M_V in y axis and R_G in the x axis.
 # label the M_V in y axis and R_G in the x axis.
 plt.xlabel('R_G(kpc)')
@@ -154,7 +154,7 @@ HB_merged_data = merged_data[merged_data['HBtype'] > 0.85].copy()
 print(HB_merged_data)
 
 # Create the figure and axis
-fig, axis1 = plt.subplots(figsize=(10, 5))
+plt.figure(figsize=(10, 6))
 
 # label the M_V in y axis and R_G in the x axis.
 plt.xlabel('R_G(kpc)')
