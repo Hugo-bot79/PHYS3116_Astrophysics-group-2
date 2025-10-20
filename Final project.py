@@ -148,6 +148,11 @@ for _, row in merged_data.iterrows():
 plt.grid(True)
 plt.show()
 
+# What can this graph tell us?
+# For the clusters that are located at larger R_G, they are most likely originated from the outer halo or have been accreted from the dwarf galaxies.
+# This is beacuse the clusters that are originated from the thin disk or inner halo are most likely loctae at the smaller R_G, referring to Belokurov & Kravtsov (2023).
+
+
 # If we apply the filter
 # We will keep all rows with HBtype > 0.85
 HB_merged_data = merged_data[merged_data['HBtype'] > 0.85].copy()
@@ -180,5 +185,6 @@ plt.show()
 
 
 
-
+# Reference
+# Belokurov V., Kravtsov A., 2023, MNRAS, 525, 4456.
 
