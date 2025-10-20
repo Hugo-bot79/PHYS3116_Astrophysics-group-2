@@ -124,7 +124,7 @@ print(candis[cols].to_string(index=False))
 
 
 # Eightth step, plot M_V vs R_G in the filter of HBtype to identify the possible accreted clusters from the merged data
-#If we are not going to apply the HBtype filter
+# Set up the figure size and axis
 plt.figure(figsize=(10, 6))
 # label the M_V in y axis and R_G in the x axis.
 # label the M_V in y axis and R_G in the x axis.
@@ -164,7 +164,7 @@ plt.ylabel('M_V(mag)')
 plt.scatter(HB_merged_data['R_G'], HB_merged_data['M_V'], color="green", marker='o')
 plt.title("M_V vs R_G for Milky Way Globular Clusters with HBtype > 0.85")
 
-# From Abhi, I label the clusters on my graph
+# From the codes that are contributed from Abhi, I label the clusters on my graph
 for _, row in HB_merged_data.iterrows():
     plt.annotate(
         str(row['NGC']),
