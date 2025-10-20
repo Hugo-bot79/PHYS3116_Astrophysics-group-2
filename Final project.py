@@ -151,9 +151,12 @@ plt.show()
 # What can this graph tell us?
 # For the clusters that are located at larger R_G, they are most likely originated from the outer halo or have been accreted from the dwarf galaxies.
 # This is beacuse the clusters that are originated from the thin disk or inner halo are most likely loctae at the smaller R_G, referring to Belokurov & Kravtsov (2023).
+# The absolute magnitude M_V  provide information about the luminosity of the clusters, where less M_V indicates a more luminous cluster.
+# Accreted clusters are generally less luminous than those clusters originated in-situ. Referring to Marsakov et al. (2019).
+# Therefore, the clusters with higher R_G and higher M_V are more likely to be accreted clusters in the graph.
+# This suggested that NGC1621, NGC1851, NGC5024, NGC6715 in the graph might be accreted from dwarf galaxies.
 
-
-# If we apply the filter
+# We can also apply the filter 'HBtype > 0.85' to the graph M_V and R_G to identify accreted clusters, referring to Marsakov et al. (2019).
 # We will keep all rows with HBtype > 0.85
 HB_merged_data = merged_data[merged_data['HBtype'] > 0.85].copy()
 print(HB_merged_data)
@@ -183,8 +186,16 @@ for _, row in HB_merged_data.iterrows():
 plt.grid(True)
 plt.show()
 
-
+# What can this graph tell us?
+# Clusters with HBtype > 0.85 means that they may have blue horizontal branches. These clusters are older, metal-poor stellar populations.
+# Therefore, these clusters are more likely to be accreted from dwarf galaxies, referring to McGill et al. (2025).
+# Therefore, apply the filter allow us to analyse the old clusters in Milkey Way, and plot the graph of M_V and R_G to analyze these clusters. 
+# However, the limitations of this filter is that some accreted clusters may have red horizontal branches.
+# And clusters with large R_G and large M_V are not necessarily accreted since they can originate from the outer halo with large dark matter content.
+# Therefore, further information like data from kinematic is required to comfirm the accreted clusters.
 
 # Reference
 # Belokurov V., Kravtsov A., 2023, MNRAS, 525, 4456.
+# Marsakov V. A., Koval’ V. V., Gozha M. L., 2019, AstBu, 74, 403. 
+# McGill G., Ferguson A. M. N., Mackey D., Huxor A. P., Lewis G. F., Martin N. F., McConnachie A. W., et al., 2025, MNRAS, 542, L60.
 
