@@ -11,14 +11,14 @@ from astropy.io import fits
 
 # Second step: import the dataset to the python
 from csv import DictReader
-file_handle = open(r"Option 1\Krause21.csv", "r", encoding="utf-8")
+file_handle = open(r"Krause21.csv", "r", encoding="utf-8")
 csv_reader = DictReader(file_handle, delimiter=",")
 for row in csv_reader:
     print(row) 
 
 file_handle.close()
 
-file_handle1 = open(r"Option 1\vandenBerg_table2.csv", "r", encoding="utf-8")
+file_handle1 = open(r"vandenBerg_table2.csv", "r", encoding="utf-8")
 csv_reader = DictReader(file_handle1, delimiter=",")
 for row in csv_reader:
     print(row)  
