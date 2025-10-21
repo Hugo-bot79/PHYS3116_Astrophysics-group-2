@@ -1,12 +1,13 @@
 
 # import necessary libraries for data analysis
 
-#use numpy for numerical calculation-> arrays
+# handling numerical data (things such as convert data to numeric type, calculate threshold)
 import numpy as np
-#use pandas for spreadsheet data
+# Manipulating spreadsheet(read and merge data)
 import pandas as pd
-
+# enable us to visualize the graph (Age and metalicity graph)
 import matplotlib.pyplot as plt
+# special library for astronomy-could be used
 from astropy.io import fits
 
 # Second step: import the dataset to the python
@@ -65,6 +66,7 @@ def to_float_series(series):
 # Convert relevant columns to float
 merged_data['Age'] = to_float_series(merged_data['Age'])
 merged_data['FeH'] = to_float_series(merged_data['FeH'])
+# ensure all numerical values are stored as floating point numbers (some may showed as text instead of numbers after merging the data)
 merged_data['HBtype'] = to_float_series(merged_data['HBtype'])
 merged_data['R_G'] = to_float_series(merged_data['R_G'])
 merged_data['M_V'] = to_float_series(merged_data['M_V'])
@@ -96,9 +98,14 @@ plt.show()
 # KK: Apply the filter
 
 # We can also apply a filter for age and FeH to identify the possible accreted clusters.
+# I use feh_cutoff=-1.5 to isolate those clusters. Values lower than feh_cutoff shows a metal-poor cluster. Then I applied 75th percentile to isolate the oldest 25% of the clusters. This forms a subset of clusters. 
+# Then I plot the filtered subsets by using some marker-*' marker to highlight the special clusters; color = 'blue' colour use to distinguish them clearly; edgecolor = 'k' to make the stars stands out visually; legend box will place where it best fits(no overlapping).
+# Afterthat I build a column list to prevent some possible errors. By doing this we have a smallest analyzable scenario-> Only export fields that are valuable for diagnosing the accreted clusters.
+# The CSV I generated now is the filtered set (“old cluster + low metal abundance”). Hugo and Abhi can directly use my candidate samples without rerunning the entire process->Png created
+
+
 # Threshold use 
 feh_cutoff = -1.5
-
 
 # Select obvious candidates
 age_threshold = merged_data['Age'].quantile(0.75)
@@ -116,7 +123,7 @@ cols = [c for c in ['NGC', 'FeH', 'Age', 'R_G', 'M_V'] if c in candis.columns]
 candis[cols].to_csv('week4_candidates.csv', index=False)
 fig.savefig('week4_age_feh_candidates.png', dpi=200)
 
-# Summary
+# Summary (Clearly display the filtering standard; Quantitatively show the suitability of the filtering conditions; Directly output the list of star clusters meeting the accretion criteria, without needing to open files for inspection)
 print(f"Age threshold (Q3): {age_threshold:.2f} Gyr | FeH cutoff: {feh_cutoff}")
 print(f"Candidates flagged: {len(candis)}")
 print(candis[cols].to_string(index=False))
@@ -198,4 +205,5 @@ plt.show()
 # Belokurov V., Kravtsov A., 2023, MNRAS, 525, 4456.
 # Marsakov V. A., Koval’ V. V., Gozha M. L., 2019, AstBu, 74, 403. 
 # McGill G., Ferguson A. M. N., Mackey D., Huxor A. P., Lewis G. F., Martin N. F., McConnachie A. W., et al., 2025, MNRAS, 542, L60.
+
 
