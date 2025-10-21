@@ -45,8 +45,10 @@ def ngc_number(id):
     return None # If no NGC, then return empty set
 
 
-# Before we merge the data, we need to change object and #NGC columns of data from Krause21 and vandenBerg_table2 to a common format.
-krau["NGC"] = krau["Object"].str.extract(r'(\d+)', expand=False) # the r'(\d+)' can be used to extract the number part, while expand=False returns a Series.
+# We need to first change object and #NGC columns of data from Krause21 and vandenBerg_table2. 
+# They should have a common format.
+krau["NGC"] = krau["Object"].str.extract(r'(\d+)', expand=False) 
+# the r'(\d+)' can be used to extract the number part, while expand=False returns a Series.
 vdb["NGC"] = vdb["#NGC"].astype(str)
 
 # select only relevant columns for diagnostics
