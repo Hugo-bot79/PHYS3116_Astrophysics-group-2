@@ -74,7 +74,7 @@ merged_data['R_G'] = to_float_series(merged_data['R_G'])
 merged_data['M_V'] = to_float_series(merged_data['M_V'])
 print(merged_data)
 
-# Seventh step, plot the graph of age against metallicity to identify the possible accreted clusters from the merged data
+# Seventh step, plot the graph of age vs metallicity to identify the possible accreted clusters
 plt.figure(figsize=(10, 6))
 
 # Put the age in y axis and FeH in the x axis
