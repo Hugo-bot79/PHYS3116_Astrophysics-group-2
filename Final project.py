@@ -165,7 +165,8 @@ plt.show()
 # Therefore, the clusters with higher R_G and higher M_V are more likely to be accreted clusters in the graph.
 # This suggested that NGC1621, NGC1851, NGC5024, NGC6715 in the graph might be accreted from dwarf galaxies.
 
-# We can also apply the filter 'HBtype > 0.85' to the graph M_V and R_G to identify accreted clusters, referring to Marsakov et al. (2019).
+# Apply the filter 'HBtype > 0.85' to the graph M_V vs R_G to identify accreted clusters.
+# Referring to Marsakov et al. (2019).
 # We will keep all rows with HBtype > 0.85
 HB_merged_data = merged_data[merged_data['HBtype'] > 0.85].copy()
 print(HB_merged_data)
