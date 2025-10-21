@@ -132,7 +132,7 @@ print(candis[cols].to_string(index=False))
 
 
 
-# Eightth step, plot M_V vs R_G in the filter of HBtype to identify the possible accreted clusters from the merged data
+# Eightth step, plot M_V vs R_G to identify the possible accreted clusters
 # Set up the figure size and axis
 plt.figure(figsize=(10, 6))
 # label the M_V in y axis and R_G in the x axis.
