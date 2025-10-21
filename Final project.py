@@ -158,7 +158,7 @@ plt.grid(True)
 plt.show()
 
 # What can this graph tell us?
-# For the clusters that are located at larger R_G, they are most likely originated from the outer halo or have been accreted from the dwarf galaxies.
+# for the clusters that are located at larger R_G, they are most likely originated from the outer halo or have been accreted from the dwarf galaxies.
 # This is beacuse the clusters that are originated from the thin disk or inner halo are most likely loctae at the smaller R_G, referring to Belokurov & Kravtsov (2023).
 # The absolute magnitude M_V  provide information about the luminosity of the clusters, where less M_V indicates a more luminous cluster.
 # Accreted clusters are generally less luminous than those clusters originated in-situ. Referring to Marsakov et al. (2019).
