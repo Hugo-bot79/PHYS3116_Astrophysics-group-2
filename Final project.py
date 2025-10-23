@@ -33,7 +33,7 @@ vdb = pd.read_csv(r"Option 1/vandenBerg_table2.csv")
 print(krau)
 print(vdb)
 
-# Fourth step: Data cleaning and preparation
+# Fourth step: Data cleaning and select the columns needed
 # Normalize IDs for merging, extract the NGC number 
 def ngc_number(id):
 # checks whether we have missing ids
