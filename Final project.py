@@ -12,14 +12,14 @@ from astropy.io import fits
 
 # Second step: import the dataset to the python
 from csv import DictReader
-file_handle = open(r"Krause21.csv", "r", encoding="utf-8")
+file_handle = open(r"Option 1/Krause21.csv", "r", encoding="utf-8")  # Fixed path
 csv_reader = DictReader(file_handle, delimiter=",")
 for row in csv_reader:
     print(row) 
 
 file_handle.close()
 
-file_handle1 = open(r"vandenBerg_table2.csv", "r", encoding="utf-8")
+file_handle1 = open(r"Option 1/vandenBerg_table2.csv", "r", encoding="utf-8")
 csv_reader = DictReader(file_handle1, delimiter=",")
 for row in csv_reader:
     print(row)  
@@ -27,8 +27,8 @@ for row in csv_reader:
 file_handle.close()
 
 # Third step: import csv file to pandas
-krau = pd.read_csv(r"Krause21.csv")
-vdb = pd.read_csv(r"vandenBerg_table2.csv")
+krau = pd.read_csv(r"Option 1/Krause21.csv")
+vdb = pd.read_csv(r"Option 1/vandenBerg_table2.csv")
 # Print out the data in the terminal to check if the data is imported correctly
 print(krau)
 print(vdb)
@@ -36,7 +36,7 @@ print(vdb)
 # Fourth step: Data cleaning and preparation
 # Normalize IDs for merging, extract the NGC number 
 def ngc_number(id):
-# checks whether the id is missing value
+# checks whether we have missing ids
     if pd.isna(id):
         return None
 # Check whether 'NGC' is present.
@@ -48,7 +48,7 @@ def ngc_number(id):
 # We need to first change object and #NGC columns of data from Krause21 and vandenBerg_table2. 
 # They should have a common format.
 krau["NGC"] = krau["Object"].str.extract(r'(\d+)', expand=False) 
-# the r'(\d+)' can be used to extract the number part, while expand=False returns a Series.
+# the r'(\d+)' can be used to extract the number part, while expand = False returns a Series.
 vdb["NGC"] = vdb["#NGC"].astype(str)
 
 # select only relevant columns for diagnostics
@@ -163,7 +163,7 @@ plt.show()
 # The absolute magnitude M_V  provide information about the luminosity of the clusters, where less M_V indicates a more luminous cluster.
 # Accreted clusters are generally less luminous than those clusters originated in-situ. Referring to Marsakov et al. (2019).
 # Therefore, the clusters with higher R_G and higher M_V are more likely to be accreted clusters in the graph.
-# This suggested that NGC1621, NGC1851, NGC5024, NGC6715 in the graph might be accreted from dwarf galaxies.
+# This suggested that NGC5053 in the graph might be accreted from dwarf galaxies.
 
 # Apply the filter 'HBtype > 0.85' to the graph M_V vs R_G to identify accreted clusters.
 # Referring to Marsakov et al. (2019).
