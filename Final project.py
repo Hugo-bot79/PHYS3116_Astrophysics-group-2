@@ -34,22 +34,21 @@ print(krau)
 print(vdb)
 
 # Fourth step: Data cleaning and select the columns needed
-# Normalize IDs for merging, extract the NGC number 
-def ngc_number(id):
-# checks whether we have missing ids
+def ngc_number(id): # This function extracts the NGC number from a string so that both files can use the same format to represent the clusters.
+# Missing ids return none
     if pd.isna(id):
         return None
 # Check whether 'NGC' is present.
     if "NGC" in id:
         return id.replace("NGC", "").strip()
-    return None # If no NGC, then return empty set
+    return None 
 
 
 # We need to first change object and #NGC columns of data from Krause21 and vandenBerg_table2. 
 # They should have a common format.
 krau["NGC"] = krau["Object"].str.extract(r'(\d+)', expand=False) 
 # the r'(\d+)' can be used to extract the number part, while expand = False returns a Series.
-vdb["NGC"] = vdb["#NGC"].astype(str)
+vdb["NGC"] = vdb["#NGC"].astype(str) # Ensure the NGC column is string for vdb dataset.
 
 # select only relevant columns for diagnostics
 krau_selected = krau[["NGC", "Age", "FeH"]]
