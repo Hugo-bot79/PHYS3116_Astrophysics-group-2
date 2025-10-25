@@ -24,7 +24,7 @@ csv_reader = DictReader(file_handle1, delimiter=",")
 for row in csv_reader:
     print(row)  
 
-file_handle.close()
+file_handle1.close()
 
 # Third step: import csv file to pandas
 krau = pd.read_csv(r"Krause21.csv")
@@ -39,8 +39,8 @@ def ngc_number(id): # This function extracts the NGC number from a string so tha
     if pd.isna(id):
         return None
 # Check whether 'NGC' is present.
-    if "NGC" in id:
-        return id.replace("NGC", "").strip()
+    if "NGC" in str(id):
+        return str(id).replace("NGC", "").strip()
     return None 
 
 
@@ -64,37 +64,55 @@ print(merged_data)
 def to_float_series(series):
     return pd.to_numeric(series, errors='coerce')
 
-# Convert relevant columns to float
+#Convert relevant columns to float
 merged_data['Age'] = to_float_series(merged_data['Age'])
 merged_data['FeH'] = to_float_series(merged_data['FeH'])
 # ensure all numerical values are stored as floating point numbers (some may showed as text instead of numbers after merging the data)
 merged_data['HBtype'] = to_float_series(merged_data['HBtype'])
 merged_data['R_G'] = to_float_series(merged_data['R_G'])
 merged_data['M_V'] = to_float_series(merged_data['M_V'])
+#
+#this will print the Data to confirm if the numeric conversion worked correctly
 print(merged_data)
 
+#dropping rows without coordinates to avoid issues when plotting
+plot_df = merged_data.dropna(subset = ['FeH', 'Age']
 # Seventh step, plot the graph of age vs metallicity to identify the possible accreted clusters
 plt.figure(figsize=(10, 6))
+
+#Scatter plot of [Fe/H] (x axis) vs Age (y axis)
+plt.scatter(
+    plot_df['FeH'],
+    plot_df['Age'],
+    color = 'blue',
+    label = 'Globular Clusters'
+)
 
 # Put the age in y axis and FeH in the x axis
 plt.xlabel('FeH')
 plt.ylabel('Age (Gyr)')
-plt.scatter( merged_data['FeH'], merged_data['Age'], color = "blue", marker='o')
-
 plt.title("Age vs [Fe/H] for Milky Way Globular Clusters")
 
-for row in merged_data.iterrows():
+#Annotate each point
+for _, row in plot_df.iterrows():
     plt.annotate(
-        str(row[1]['NGC']),
-        xy=(row[1]['FeH'], row[1]['Age']),
+        str(row['NGC']),
+        xy=(row['FeH'], row['Age']),
         xytext=(3, 3),
         textcoords="offset points",
         fontsize=8,
         alpha=0.9
+        ha = 'left', va = 'bottom' #this helps reduce overlap
     )
 
-plt.grid(True)
+#Add grid, legend, and display
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+plt.tight_layout()
 plt.show()
+
+#In this section of code, from merging that data to plotting, we are making sure that all the important columns of data like age, metallicity, [Fe/H] and Brightness are read as numeric values and not as texts. By converting them to 'float' format, we are also making sure that the data can be plotted and analysed. 
+
 
 # KK: Apply the filter
 
@@ -116,6 +134,10 @@ candis = merged_data[(merged_data['FeH'] <= feh_cutoff) & (merged_data['Age'] >=
 # Highlight candidates
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.scatter(candis['FeH'], candis['Age'], s=80, marker='*', color='blue', edgecolors='k', linewidths=0.5, label='Candidates')
+#AJ add axis for consistency
+ax.set_xlabel('[Fe/H]')
+ax.set_ylabel('Age (Gyr)')
+ax.set_title('Candidate accreted clusters (old & metal-poor)')
 ax.legend(loc='best')
 
 # Save outputs
@@ -132,6 +154,8 @@ print(candis[cols].to_string(index=False))
 
 
 # Eightth step, plot M_V vs R_G to identify the possible accreted clusters
+#Dropping rows missing coordinates so that it makes plotting easier AJ
+plot_df = merged_data.dropna(subset = ['R_G', 'M_V']).copy()
 # Set up the figure size and axis
 plt.figure(figsize=(10, 6))
 # label the M_V in y axis and R_G in the x axis.
@@ -140,10 +164,16 @@ plt.xlabel('R_G(kpc)')
 plt.ylabel('M_V(mag)')
 
 # Plot the scatter plot and set up the colour as blue
-plt.scatter(merged_data['R_G'], merged_data['M_V'], color="green", marker='o')
+plt.scatter(
+    plot_df['R_G'},
+    plot_df['M_V'],
+    color = 'green',
+    marker = 'o',
+    label='Globular clusters'
+)
 plt.title("M_V vs R_G for Milky Way Globular Clusters")
 
-for _, row in merged_data.iterrows():
+for _, row in plot_df.iterrows():
     plt.annotate(
         str(row['NGC']),
         xy=(row['R_G'], row['M_V']),  
@@ -151,9 +181,16 @@ for _, row in merged_data.iterrows():
         textcoords="offset points",
         fontsize=8,
         alpha=0.9
+        na = 'left', va = 'bottom
     )
 
-plt.grid(True)
+#since in Astronomy convention, more negative values are brighter, we invert the y axis
+ax = plt.gca()
+ax.invert_yaxis()
+
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+plt.tight_layout()
 plt.show()
 
 # What can this graph tell us?
@@ -207,5 +244,6 @@ plt.show()
 # Belokurov V., Kravtsov A., 2023, MNRAS, 525, 4456.
 # Marsakov V. A., Koval’ V. V., Gozha M. L., 2019, AstBu, 74, 403. 
 # McGill G., Ferguson A. M. N., Mackey D., Huxor A. P., Lewis G. F., Martin N. F., McConnachie A. W., et al., 2025, MNRAS, 542, L60.
+
 
 
