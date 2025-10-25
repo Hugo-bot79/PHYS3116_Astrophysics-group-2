@@ -165,7 +165,7 @@ plt.ylabel('M_V(mag)')
 
 # Plot the scatter plot and set up the colour as blue
 plt.scatter(
-    plot_df['R_G'},
+    plot_df['R_G'],
     plot_df['M_V'],
     color = 'green',
     marker = 'o',
@@ -244,6 +244,7 @@ plt.show()
 # Belokurov V., Kravtsov A., 2023, MNRAS, 525, 4456.
 # Marsakov V. A., Koval’ V. V., Gozha M. L., 2019, AstBu, 74, 403. 
 # McGill G., Ferguson A. M. N., Mackey D., Huxor A. P., Lewis G. F., Martin N. F., McConnachie A. W., et al., 2025, MNRAS, 542, L60.
+
 
 
 
