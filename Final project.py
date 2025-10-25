@@ -101,7 +101,7 @@ for _, row in plot_df.iterrows():
         xytext=(3, 3),
         textcoords="offset points",
         fontsize=8,
-        alpha=0.9
+        alpha=0.9,
         ha = 'left', va = 'bottom' #this helps reduce overlap
     )
 
@@ -180,8 +180,8 @@ for _, row in plot_df.iterrows():
         xytext=(3, 3),
         textcoords="offset points",
         fontsize=8,
-        alpha=0.9
-        na = 'left', va = 'bottom
+        alpha=0.9,
+        na = 'left', va = 'bottom'
     )
 
 #since in Astronomy convention, more negative values are brighter, we invert the y axis
@@ -244,6 +244,7 @@ plt.show()
 # Belokurov V., Kravtsov A., 2023, MNRAS, 525, 4456.
 # Marsakov V. A., Koval’ V. V., Gozha M. L., 2019, AstBu, 74, 403. 
 # McGill G., Ferguson A. M. N., Mackey D., Huxor A. P., Lewis G. F., Martin N. F., McConnachie A. W., et al., 2025, MNRAS, 542, L60.
+
 
 
 
