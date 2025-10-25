@@ -76,7 +76,7 @@ merged_data['M_V'] = to_float_series(merged_data['M_V'])
 print(merged_data)
 
 #dropping rows without coordinates to avoid issues when plotting
-plot_df = merged_data.dropna(subset = ['FeH', 'Age']
+plot_df = merged_data.dropna(subset = ['FeH', 'Age'])
 # Seventh step, plot the graph of age vs metallicity to identify the possible accreted clusters
 plt.figure(figsize=(10, 6))
 
@@ -244,6 +244,7 @@ plt.show()
 # Belokurov V., Kravtsov A., 2023, MNRAS, 525, 4456.
 # Marsakov V. A., Koval’ V. V., Gozha M. L., 2019, AstBu, 74, 403. 
 # McGill G., Ferguson A. M. N., Mackey D., Huxor A. P., Lewis G. F., Martin N. F., McConnachie A. W., et al., 2025, MNRAS, 542, L60.
+
 
 
 
