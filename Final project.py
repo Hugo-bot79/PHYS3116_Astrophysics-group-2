@@ -12,14 +12,14 @@ from astropy.io import fits
 
 # Second step: import the dataset to the python
 from csv import DictReader
-file_handle = open(r"Krause21.csv", "r", encoding="utf-8")  # Fixed path
+file_handle = open(r"Option1/Krause21.csv", "r", encoding="utf-8")  # Fixed path
 csv_reader = DictReader(file_handle, delimiter=",")
 for row in csv_reader:
     print(row) 
 
 file_handle.close()
 
-file_handle1 = open(r"vandenBerg_table2.csv", "r", encoding="utf-8")
+file_handle1 = open(r"Option/vandenBerg_table2.csv", "r", encoding="utf-8")
 csv_reader = DictReader(file_handle1, delimiter=",")
 for row in csv_reader:
     print(row)  
@@ -244,6 +244,7 @@ plt.show()
 # Belokurov V., Kravtsov A., 2023, MNRAS, 525, 4456.
 # Marsakov V. A., Koval’ V. V., Gozha M. L., 2019, AstBu, 74, 403. 
 # McGill G., Ferguson A. M. N., Mackey D., Huxor A. P., Lewis G. F., Martin N. F., McConnachie A. W., et al., 2025, MNRAS, 542, L60.
+
 
 
 
